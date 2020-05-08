@@ -1,5 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react'
-import {gsap} from 'gsap'
+import React, {useState, useEffect} from 'react'
 
 function Home() {
 
@@ -16,26 +15,24 @@ function Home() {
   useEffect(() => {
     const typeW = (text, set) => {
       const typewritter = setInterval(() => {
-        if (unmount == false) {
         now = now + text[i]
-          set(now)
-          i++
-          if (i >= text.length) {
-            if (p) {
-              typeW(description, setPara) 
-              p = false
-            }
-            clearInterval(typewritter)
-            i = 0
-            now = ''
+        set(now)
+        i++
+        let textLength = text.length
+        if (i >= textLength) {
+          if (p) {
+            typeW(description, setPara)
+            p = false
           }
+          clearInterval(typewritter)
+          i = 0
+          now = ''
         }
       }, 50)
     }
     typeW(title, setHello)
   }, [])
 
-  let trs = useRef()
   return (
     <header className="header">
       <h1>{hello}</h1>

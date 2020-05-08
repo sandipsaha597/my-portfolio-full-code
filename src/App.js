@@ -31,17 +31,15 @@ function App() {
     
   } 
   const changeColorOut = () => {
-    setCursorColor('#fc0363')
-    console.log('changed #000');
-    
+    setCursorColor('#fc0363')    
   }  
-  const hey = (e) => console.log(e.target.getAttribute('datac'));
   
   return (
     <Router>
     <div className="App" onMouseMove={e => {setCursor({x: e.pageX, y: e.pageY})}}>
+      {/* <Cursor y={cursor.y} x={cursor.x} color={cursorColor} /> */}
+      <div className="cursor" style={{top: cursor.y + 'px', left: cursor.x  + 'px', borderColor: cursorColor}}></div>
       <Nav changeColor={changeColor} changeColorOut={changeColorOut} />
-      <Cursor y={cursor.y} x={cursor.x} color={cursorColor} />
       {routes.map(({path, Component}) => (
         <Route key={path} path={path} exact>
           <div className="page">  
@@ -50,62 +48,6 @@ function App() {
         </Route>
       ))}
     </div>
-    {/* <Link to='/'>home</Link>
-    <Link to='/about'>about</Link>
-    <Link to='/page3'>page3</Link>
-      <Route path='/' exact>
-    {({match}) => (
-      <CSSTransition 
-        in={match != null} 
-        timeout={400} 
-        unmountOnExit
-        onExit={onExit}
-        onEnter={onEnter}
-        classNames="my-node">
-          <Home />
-      </CSSTransition>
-    )}
-    </Route>
-    <Route path='/about' exact>
-    {({match}) => (
-      <CSSTransition 
-        in={match != null} 
-        timeout={400} 
-        unmountOnExit
-        onExit={onExit}
-        onEnter={onEnter}
-        classNames="my-node">
-          <About/>
-      </CSSTransition>
-    )}
-    </Route>
-    <Route path='/page3' exact> */}
-    {/* {({match}) => (
-      <CSSTransition 
-        in={match != null} 
-        timeout={400} 
-        unmountOnExit
-        onExit={onExit}
-        onEnter={onEnter}
-        classNames="my-node">
-          <Page3/>
-      </CSSTransition>
-    )}
-    </Route> */}
-
-    {/* <button type="button" onClick={() => setInProp('home')}>
-      Home
-    </button>
-    <button type="button" onClick={() => setInProp('about')}>
-      About
-    </button>
-    <button type="button" onClick={() => setInProp('page3')}>
-      Page3
-    </button> */}
-
-    {/* {inProp == 'home' && <Home/>}
-    {inProp == 'about' && <About/>}
-    {inProp == 'page3' && <Page3/>} */}
     
     </Router>
   );

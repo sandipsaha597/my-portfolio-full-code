@@ -12,9 +12,9 @@ function Nav(props) {
         <div className={`menu${state ? ' active' : ''}`}>
             <div className="nav-icon" onClick={toggle} 
                 data-cursor-color="#fff" onMouseEnter={props.changeColor} onMouseLeave={props.changeColorOut}>
-                <div className="topbar"></div>
-                <div className="middlebar"></div>
-                <div className="bottombar"></div>
+                <div className="topbar" data-cursor-color="#fff" onMouseEnter={props.changeColor}></div>
+                <div className="middlebar" data-cursor-color="#fff" onMouseEnter={props.changeColor}></div>
+                <div className="bottombar" data-cursor-color="#fff" onMouseEnter={props.changeColor}></div>
             </div>
             <nav style={state ? style.nav : {'none': 'none'}}>
                 <ul onClick={() => setState(!state)}>
