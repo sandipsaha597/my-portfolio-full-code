@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Nunito:wght@600&display=swap');
+
 * {
-  /* cursor: none !important; */
+  cursor: none !important;
 }
 .App {
   background: #000;
@@ -11,6 +13,7 @@
 }
 h1 {
  margin: 0;
+ font-family: 'Nunito', "Helvetica Neue", Helvetica, sans-serif;
 }
 ul {
   list-style: none;
@@ -36,6 +39,7 @@ ul {
   max-width: 530px;
   text-align: center;
   /* opacity: 0;  */
+  font-family: 'Source Code Pro', 'Consolas', monospace;
 }
 
 .skills {
