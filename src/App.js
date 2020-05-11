@@ -7,7 +7,7 @@ import './App.css';
 
 import Home from './components/Home'
 import Nav from './components/Nav'
-import About from './components/About'
+import Skills from './components/Skills'
 import Page3 from './components/Page3'
 import Cursor from './components/Cursor';
 
@@ -22,7 +22,7 @@ function App() {
 
   const routes = [
     {path: '/multi-page-website', name: 'Home', Component: Home},
-    {path: '/about', name: 'About', Component: About},
+    {path: '/skills', name: 'Skills', Component: Skills},
     {path: '/page3', name: 'Page3', Component: Page3}
   ]
 
@@ -36,7 +36,7 @@ function App() {
   
   return (
     <Router>
-    <div className="App" onMouseMove={e => {setCursor({x: e.pageX, y: e.pageY})}}>
+    <div className="App" onMouseMove={e => { console.log(e.clientX, e.clientY);{setCursor({x: e.clientX, y: e.clientY})} } }>
       {/* <Cursor y={cursor.y} x={cursor.x} color={cursorColor} /> */}
       <div className="cursor" style={{top: cursor.y + 'px', left: cursor.x  + 'px', borderColor: cursorColor}}></div>
       <Nav changeColor={changeColor} changeColorOut={changeColorOut} />

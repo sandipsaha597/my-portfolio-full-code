@@ -1,21 +1,29 @@
 * {
-  cursor: none !important;
+  /* cursor: none !important; */
 }
 .App {
+  background: #000;
   text-align: center;
   position: relative;
   overflow-x: hidden;
   /* cursor: none; */
-
+  
+}
+h1 {
+ margin: 0;
 }
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.header, .about, .page3 {
-  background: #2f2f2f;
-  height: 100vh;
+.container {
+  margin: auto;
+  width: 1170px;
+}
+.header, .skills, .page3 {
+  /* background: #2f2f2f; */
+  min-height: 100vh;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -23,19 +31,69 @@ ul {
   margin: auto;
   color: #cacaca;
 }
-.header p, .about p, .page3 p {
+.header p, .skills p, .page3 p {
   color: #8a8a8a;
-  width: 530px;
+  max-width: 530px;
   text-align: center;
   /* opacity: 0;  */
 }
 
-h1 {
- margin: 0;
+.skills {
+  color: #cacaca;
+  padding: 100px 0px 40px;
+  position: relative;
+}
+.skills h1 {
+  font-size: 70px;
+}
+.skills-list {
+  display: flex;
+  /* align-items: center; */
+  width: 100%;
+  flex-flow: row wrap;
+}
+.skills-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 50%;
+}
+.skills-list h2 {
+  font-size: 50px;
+  width: 50%;
+}
+.skills-list li:hover .para, .skills-list li:hover p {
+ opacity: 1;
+ transform: scaleY(1);
+}
+.skills-list .para {
+  background: #2f2f2f;
+  box-sizing: border-box;
+  right: 0;
+  width: 50%;
+  /* opacity: 0; */
+  padding: 10px 10px;
+  pointer-events: none;
+  position: absolute;
+  transform: scaleY(0);
+  transition: .2s;
+}
+.skills-list li:nth-child(odd) .para {
+  right: 0;
+}
+.skills-list li:nth-child(even) .para {
+  left: 0;
+}
+.skills p {
+  opacity: 0;
+  transition: .4s;
+  transition-delay: .4s;
+  width: 100%;
 }
 
+
 nav {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -80,7 +138,7 @@ nav ul a:hover::after {
   cursor: pointer;
   width: 55px;
   height: 41px;
-  position: absolute;
+  position: fixed;
   right: 100px;
   top: 100px;
   -webkit-transition: .4s;
@@ -138,10 +196,6 @@ nav ul a:hover::after {
             transform: rotate(-45deg);
 }
 
-/* .menu.active {
-  transform: translate(0, 0);
-} */
-
 .menu.active nav {
     -webkit-transform: translate(0px, 0%);
         -ms-transform: translate(0px, 0%);
@@ -150,11 +204,11 @@ nav ul a:hover::after {
                     
 /* ========================= */
 
-.container {
+/* .container {
 	margin: auto;
 	max-width: 900px;
 	width: 90%;
-}
+} */
 img {
 	height: 100%;
 	max-width: 100%;
@@ -258,9 +312,8 @@ img {
   height: 30px;
   border: 2px solid #fc0363;
   border-radius: 50%;
-  position: absolute;
+  position: fixed;
   pointer-events: none;
   transform: translate(-50%, -50%);
-  transition: 0.2s ease-out;
   z-index: 100;
 }

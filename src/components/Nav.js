@@ -22,7 +22,7 @@ function Nav(props) {
                         <Link to="/multi-page-website" >Home</Link>
                     </li>
                     <li>
-                        <Link to="/about" >About</Link>
+                        <Link to="/skills" >Skills</Link>
                     </li>
                     <li>
                         <Link to="/page3" >Page3</Link>
