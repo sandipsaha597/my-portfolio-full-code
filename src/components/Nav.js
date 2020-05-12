@@ -11,7 +11,10 @@ function Nav(props) {
         <>
         <div className={`menu${state ? ' active' : ''}`}>
             <div className="nav-icon" onClick={toggle} 
-                data-cursor-color="#fff" onMouseEnter={props.changeColor} onMouseLeave={props.changeColorOut}>
+                data-cursor-color="#fff" 
+                onMouseEnter={props.changeColor} 
+                onMouseLeave={props.changeColorOut}
+                data-fixed-cursor='true'>
                 <div className="topbar" data-cursor-color="#fff" onMouseEnter={props.changeColor}></div>
                 <div className="middlebar" data-cursor-color="#fff" onMouseEnter={props.changeColor}></div>
                 <div className="bottombar" data-cursor-color="#fff" onMouseEnter={props.changeColor}></div>
@@ -19,13 +22,19 @@ function Nav(props) {
             <nav style={state ? style.nav : {'none': 'none'}}>
                 <ul onClick={() => setState(!state)}>
                     <li>
-                        <Link to="/multi-page-website" >Home</Link>
+                        <Link to="/multi-page-website" data-cursor-color="#fff" 
+                onMouseEnter={props.changeColor} 
+                onMouseLeave={props.changeColorOut} >Home</Link>
                     </li>
                     <li>
-                        <Link to="/skills" >Skills</Link>
+                        <Link to="/skills" data-cursor-color="#fff" 
+                onMouseEnter={props.changeColor} 
+                onMouseLeave={props.changeColorOut} >Skills</Link>
                     </li>
                     <li>
-                        <Link to="/page3" >Page3</Link>
+                        <Link to="/page3" data-cursor-color="#fff" 
+                onMouseEnter={props.changeColor} 
+                onMouseLeave={props.changeColorOut} >Page3</Link>
                     </li>
                 </ul>
             </nav>

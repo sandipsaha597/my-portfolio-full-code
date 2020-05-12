@@ -3,13 +3,6 @@ import Skill_layout from './skills/Skill_layout'
 
 function Skills() {
 
-  const skills = [
-    {
-      title: 'HTML',
-      para: 'I have in-depth knowledge of <b> HTML5</b>. I can write SEO friendly, clean HTML code.'
-    }
-  ]
-
   return (
     <div className="skills container">
       <h1>Skills</h1>
@@ -29,7 +22,7 @@ function Skills() {
         <li>
           <h2 className="skill">JavaScript</h2>
           <div className="para">
-            <p>C:/Skills/JavaScript> With basic knowledge of loops, functions, conditions etc, I also hold knowledge of other programming concepts like callbacks, promises, recursion etc. I also know some frontend engineering concepts like deboucing. I know ES5, ES6, some ES7 and object oriented programming.</p>
+            <p>C:/Skills/JavaScript> With basic knowledge of loops, functions, conditions etc, I also hold knowledge of other programming concepts like callbacks, promises, recursion etc. I also know some frontend engineering concepts like debouncing. I know ES5, ES6, some ES7 and object oriented programming.</p>
           </div>
         </li>
         <li>
@@ -59,7 +52,7 @@ function Skills() {
         <li>
           <h2 className="skill">SASS</h2>
           <div className="para">
-            <p>C:/Skills/SASS> Basics. Varibles, loops, mixins. I use it mostly for nesting styles.</p>
+            <p>C:/Skills/SASS> Basics. Variables, loops, mixins. I use it mostly for nesting styles.</p>
           </div>
         </li>
         <li>
@@ -71,7 +64,7 @@ function Skills() {
         <li>
           <h2 className="skill">Python</h2>
           <div className="para">
-            <p>C:/Skills/Python> I wanted to learn automation so I learned python. Automated many web tasks almost perfectly. I also did some python college asignments as a freelancer. I know basic web scrapping as well.</p>
+            <p>C:/Skills/Python> I wanted to learn automation so I learned python. Automated many web tasks almost perfectly. I also did some python college assignment as a freelancer. I know basic web scrapping as well.</p>
           </div>
         </li>
       </ul>
