@@ -1,12 +1,15 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Skill_layout from './skills/Skill_layout'
 
 function Skills() {
-
+  const [active, setActive] = useState(false)
+  useEffect(() => {
+    setTimeout(() => {setActive({active: true}) }, 1)
+  }, [])
   return (
     <div className="skills container">
       <h1>Skills</h1>
-      <ul className="skills-list">
+      <ul className={`skills-list ${active ? 'active' : ''}`} >
         <li>
           <h2 className="skill">HTML</h2>
           <div className="para">
