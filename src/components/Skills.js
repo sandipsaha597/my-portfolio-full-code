@@ -4,6 +4,7 @@ import Skill_layout from './skills/Skill_layout'
 function Skills() {
   const [active, setActive] = useState(false)
   useEffect(() => {
+    document.title = 'Skills | Developer Sandip'
     setTimeout(() => {setActive({active: true}) }, 1)
   }, [])
   return (

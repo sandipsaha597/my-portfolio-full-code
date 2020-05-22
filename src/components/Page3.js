@@ -1,15 +1,18 @@
 import React, {useEffect} from 'react'
-import {gsap} from 'gsap'
+// import {gsap} from 'gsap'
 
 function Page3() {
-    let trsDuration = 1
+    // let trsDuration = 1
+    // useEffect(() => {
+    //     gsap.from('.line', {
+    //     duration: trsDuration,
+    //     opacity: 0,
+    //     x: -40,
+    //     stagger: .4
+    //     })
+    // }, [])
     useEffect(() => {
-        gsap.from('.line', {
-        duration: trsDuration,
-        opacity: 0,
-        x: -40,
-        stagger: .4
-        })
+        document.title = 'Page 3 | Developer Sandip'
     }, [])
     return (
         <div className="page3">

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { CSSTransition } from 'react-transition-group';
 
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
 // import {gsap} from 'gsap'
@@ -10,6 +9,7 @@ import Nav from './components/Nav'
 import Skills from './components/Skills'
 import Page3 from './components/Page3'
 import Cursor from './components/Cursor';
+import Footer from './components/Footer';
 
 function App() {
     
@@ -30,11 +30,14 @@ function App() {
 
   const changeColor = (e) => {
     setCursorColor(e.target.getAttribute('data-cursor-color'))
-    if (e.target.getAttribute('data-fixed-cursor') === 'true') {
-      let navIcon = document.querySelector('.nav-icon')
-      console.log(navIcon.getBoundingClientRect());
+    console.log(e.target);
+    
+    if (e.target.getAttribute('data-fixed-cursor') === 'true') {      
+      let navIcon = document.getElementById(e.target.id)
       let navIconCoor = navIcon.getBoundingClientRect()
-      let cursorSize = 10
+      // console.log();
+      
+      let cursorSize = parseInt(e.target.getAttribute('data-cursor-size')) ||  10
       if (navIconCoor.width >= navIconCoor.height) {
         cursorSize += navIconCoor.width
       } else {
@@ -63,10 +66,12 @@ function App() {
       {routes.map(({path, Component}) => (
         <Route key={path} path={path} exact>
           <div className="page">  
-            <Component />
+            
+            <Component changeColor={changeColor} changeColorOut={changeColorOut} />
           </div>
         </Route>
       ))}
+      <Footer changeColor={changeColor} changeColorOut={changeColorOut} />
     </div>
     </Router>
   );

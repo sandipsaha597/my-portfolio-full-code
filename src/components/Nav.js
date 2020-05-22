@@ -11,6 +11,7 @@ function Nav(props) {
         <>
         <div className={`menu${state ? ' active' : ''}`}>
             <div className="nav-icon" onClick={toggle} 
+                id="nav-icon"
                 data-cursor-color="#fff" 
                 onMouseEnter={props.changeColor} 
                 onMouseLeave={props.changeColorOut}
@@ -20,7 +21,10 @@ function Nav(props) {
                 <div className="bottombar" data-cursor-color="#fff" onMouseEnter={props.changeColor}></div>
             </div>
             <nav style={state ? style.nav : {'none': 'none'}}>
-                <ul onClick={() => setState(!state)}>
+                <ul onClick={(e) => {
+                    setState(!state)                    
+                    return e.target.tagName === 'A' ? window.scrollTo(0, 0) : false
+                }}>
                     <li>
                         <Link to="/multi-page-website" data-cursor-color="#fff" 
                 onMouseEnter={props.changeColor} 
